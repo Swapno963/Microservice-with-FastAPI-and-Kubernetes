@@ -1,0 +1,11 @@
+__pycache__
+*.pyc
+*.pyo
+*.db
+.git
+.gitignore
+README.md
+k8s/
+Makefile
+.env
+
