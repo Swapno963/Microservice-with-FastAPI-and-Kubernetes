@@ -1,0 +1,34 @@
+# Apply all Kubernetes manifests
+kubectl apply -f k8s/
+
+# Verify deployment
+kubectl get deployments
+
+# Check pods are running
+kubectl get pods -l app=product-service
+
+# Watch pods come up (optional)
+kubectl get pods -w
+
+# Check service
+kubectl get svc product-service
+
+# Get detailed pod information
+kubectl describe pod -l app=product-service
+
+
+
+
+
+
+
+
+# Apply LoadBalancer service
+kubectl apply -f k8s/loadbalancer.yaml
+
+# Get the external IP (may take a minute)
+kubectl get svc product-service-lb
+
+# Wait for EXTERNAL-IP to appear (watch mode)
+kubectl get svc product-service-lb -w
+
